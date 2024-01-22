@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Signup</title>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-database-compat.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <script src="../js/signup.js"></script>
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+    <!-- Signup Form (Initially Hidden) -->
+    <div id="signupContainer" class="bg-white p-8 rounded shadow-md w-96">
+        <!-- Logo -->
+        <div class="mb-6 text-center">
+            <img src="../graphics/logo_png.png" alt="Company Logo" class="mx-auto mb-4">
+            <h1 class="text-2xl font-bold">Sign Up</h1>
+        </div>
+        <!-- Signup Form Fields -->
+        <form id="signupForm">
+            <div class="mb-4">
+                <label for="companyName" class="block text-gray-600 text-sm font-medium mb-2">Company Name</label>
+                <input type="text" id="companyName" name="companyName" class="w-full border rounded-md py-2 px-3" required>
+            </div>
+            <div class="mb-4">
+                <label for="newUsername" class="block text-gray-600 text-sm font-medium mb-2">Username</label>
+                <input type="text" id="newUsername" name="newUsername" class="w-full border rounded-md py-2 px-3" required>
+            </div>
+            <div class="mb-4">
+                <label for="newPassword" class="block text-gray-600 text-sm font-medium mb-2">Password</label>
+                <input type="password" id="newPassword" class="w-full border rounded-md py-2 px-3" required>
+            </div>
+            <button type="submit" onclick="event.preventDefault(); signUpWithEmailAndPassword();" class="w-full bg-green-500 text-white py-2 rounded-md">Sign Up</button>
+
+            <!-- Status Label -->
+            <div id="statusLabel" class="mt-2 text-center text-red-500"></div>
+        </form>
+        <!-- Login Link -->
+        <div class="mt-4 text-center">
+            <p class="text-sm">Already have an account? <a href="login.html" id="showLogin">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/settings.css"> <!-- External CSS file -->
+    <title>Dashboard</title>
+    <script  src="https://www.gstatic.com/firebasejs/9.0.1/firebase-app-compat.js"></script>
+    <script  src="https://www.gstatic.com/firebasejs/9.0.1/firebase-auth-compat.js"></script>
+    <script  src="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.1/firebase-database-compat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    <script src="../js/firebase-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+
+<body class="flex flex-col md:flex-row bg-gray-100 w-screen">
+
+    <!-- Side Navigation Container -->
+<div class="flex h-screen bg-gray-100">
+
+    <!-- Side Navigation -->
+    <div id="sideNavContainer" class="md:w-1/6 md:flex-shrink-0 side-nav-container overflow-hidden">
+        <div id="sideNav" class="h-full p-4 rounded-r-md shadow-md bg-white transition-transform transform transition-all ease-in-out duration-300">
+            <div class="flex items-center mb-8">
+                <!-- Company Logo (smaller) -->
+                <img src="../graphics/logo_png.png" alt="Company Logo" class="mx-auto mb-2 p-8">
+            </div>
+
+            <!-- Navigation Tabs -->
+            <ul>
+                <li class="mb-2 p-2 text-blue-500 rounded-md font-semibold hover:bg-blue-100 transition">
+                    <a href="#" class="block text-sm">Dashboard</a>
+                </li>
+                <li class="mb-2 p-2 text-blue-500 rounded-md font-semibold hover:bg-blue-100 transition">
+                    <a href="https://www.testright.in/aboutus.html" class="block text-sm">About</a>
+                </li>
+                <li class="mb-2 p-2 text-blue-500 rounded-md font-semibold hover:bg-blue-100 transition">
+                    <a href="https://www.testright.in/customer.html" class="block text-sm">Customer Service</a>
+                </li>
+                <!-- Sign Out Button -->
+                <li class="mt-4">
+                    <button onclick="signOut()" class="bg-gray-300 hover:bg-red-500 text-white px-4 py-2 rounded-md transition">
+                        Sign Out <i class="fas fa-sign-out-alt ml-2"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content Area Container -->
+    <div id="mainContentContainer" class="p-4 relative transition-transform transform w-screen h-screen">
+        <!-- Toggle Button and Main Header -->
+        <div class="w-full h-full flex flex-col ">
+            <div class="bg-white p-4 mb-4 flex flex-col items-start w-full">
+                <div class="flex items-center w-full">
+                    <button id="toggleSideNavButton" onclick="toggleSideNavWithAnimation()"
+                        class="text-blue-500 hover:text-blue-700 focus:outline-none transition-transform transform hover:scale-110">
+                        <img src="../graphics/toggle.png" alt="Toggle Menu" class="w-8">
+                    </button>
+                    <h1 id="companyName" class="text-2xl font-semibold">TestRight</h1>
+                </div>
+                
+                <div class="mt-4">
+                    <button onclick="exportToExcel()"
+                        class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">
+                        Download <i class="fas fa-download ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto max-h-screen">
+                <div class="mt-4 w-full">
+                    <div class="table-responsive w-full">
+                        <table class="table table-bordered table-striped">
+                            <thead class="thead-light">
+                                <tr class="w-full">
+                                    <th scope="col">Channel</th>
+                                    <!-- <th scope="col">MCC/BMC</th> -->
+                                    <!-- <th scope="col">Testing Location</th> -->
+                                    <!-- <th scope="col">Route</th> -->
+                                    <!-- <th scope="col">MPP</th> -->
+                                    <!-- <th scope="col">Farmer</th> -->
+                                    <th scope="col">Sample Details</th>
+                                    <!-- <th scope="col">Milk Type</th> -->
+                                    <!-- <th scope="col">Chemist</th> -->
+                                    <!-- <th scope="col">Remarks</th> -->
+                                    <!-- <th scope="col">Data</th> -->
+                                    <th scope="col">Start Time</th>
+                                    <th scope="col">End Time</th>
+                                    <th scope="col">Decolor Time</th>
+                                    <!-- <th scope="col">Avg Temp</th> -->
+                                    <!-- <th scope="col">Min Temp</th> -->
+                                    <!-- <th scope="col">Max Temp</th> -->
+                                </tr>
+                            </thead>
+                            
+                            <tbody id="tableBody" class="overflow-y-auto w-full">
+                                <!-- Populate table rows here -->
+                            </tbody>
+                        
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>
+
+
+
+

@@ -1,0 +1,70 @@
+@media (max-width: 640px) {
+    /* Collapse side navigation on smaller screens */
+    .side-navigation {
+        width: 100%;
+    }
+    
+}
+
+ /* Additional styles for table responsiveness and header font */
+ @media (max-width: 640px) {
+    table {
+        overflow-x: auto;
+        display: block;
+    }
+}
+
+table th {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+
+
+
+table {
+    border-spacing: 0;
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f8f8;
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 198, 0, 0.15);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+table th {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+#sideNavContainer {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hide the sideNavContainer by default */
+#sideNavContainer.hidden {
+    transform: translateX(-100%);
+}

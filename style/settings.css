@@ -1,0 +1,14 @@
+:root {
+    --font-size: 2spx; /* Set your desired font size here */
+} 
+
+body {
+    font-size: var(--font-size);
+}
+
+/* Add more styles as needed */
+table,
+table td,
+table th {
+    font-size: var(--font-size) !important;
+}
