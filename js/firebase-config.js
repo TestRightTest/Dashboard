@@ -1,11 +1,12 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyDMAenH72JJD8jMiNgrF5yFqnfOC5dqNyg",
-  authDomain: "mbscan-ec967.firebaseapp.com",
-  projectId: "mbscan-ec967",
-  storageBucket: "mbscan-ec967.appspot.com",
-  messagingSenderId: "844556435139",
-  appId: "1:844556435139:web:005c9150e70cc4a189ec76",
-  measurementId: "G-0EF6Q6V0G0"
+  apiKey: "AIzaSyBPf56iZ2nhB7emgHYxlYdMf7z5UP0xmck",
+  authDomain: "testright-56347.firebaseapp.com",
+  databaseURL: "https://testright-56347-default-rtdb.firebaseio.com",
+  projectId: "testright-56347",
+  storageBucket: "testright-56347.appspot.com",
+  messagingSenderId: "491237380673",
+  appId: "1:491237380673:web:2b378cf0a74a54f7342cc0",
+  measurementId: "G-24BMB41RCQ"
 };
 
   // Initialize Firebase
